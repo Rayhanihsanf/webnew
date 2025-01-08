@@ -41,6 +41,86 @@
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        <!-- Page Content-->
+            <div class="container px-5 my-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Filter</span></h1>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="text-center mb-4">
+                    <button class="btn btn-primary filter-btn" data-filter="all">All</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="html">HTML</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="css">CSS</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="javascript">JavaScript</button>
+                </div>
+
+                <!-- Certificate Cards -->
+                <div class="row gx-5 justify-content-center" id="certificate-gallery">
+                    <div class="col-lg-4 mb-4 filter-item html">
+                        <div class="card shadow border-0 rounded-4">
+                            <img class="card-img-top" src="assets/HTML.jpg" alt="Introduction to HTML">
+                            <div class="card-body">
+                                <h5 class="card-title">Introduction to HTML</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4 filter-item css">
+                        <div class="card shadow border-0 rounded-4">
+                            <img class="card-img-top" src="assets/CSS.jpg" alt="Introduction to CSS">
+                            <div class="card-body">
+                                <h5 class="card-title">Introduction to CSS</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4 filter-item javascript">
+                        <div class="card shadow border-0 rounded-4">
+                            <img class="card-img-top" src="assets/JavaScript.jpg" alt="Introduction to JavaScript">
+                            <div class="card-body">
+                                <h5 class="card-title">Introduction to JavaScript</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4 filter-item javascript">
+                        <div class="card shadow border-0 rounded-4">
+                            <img class="card-img-top" src="assets/JavaScript2.jpg" alt="JavaScript Intermediate">
+                            <div class="card-body">
+                                <h5 class="card-title">JavaScript Intermediate</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const filterItems = document.querySelectorAll('.filter-item');
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const filter = button.getAttribute('data-filter');
+
+                        // Change button styles
+                        filterButtons.forEach(btn => btn.classList.remove('btn-primary'));
+                        button.classList.add('btn-primary');
+
+                        // Show/Hide items
+                        filterItems.forEach(item => {
+                            if (filter === 'all' || item.classList.contains(filter)) {
+                                item.style.display = '';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
                         <!-- Experience Section-->
                         <section>
                             <div class="d-flex align-items-center justify-content-between mb-4">
